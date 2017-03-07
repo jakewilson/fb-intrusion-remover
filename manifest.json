@@ -1,0 +1,12 @@
+{
+  "name": "Facebook Intrusion Remover",
+  "description": "Removes that annoying facebook pop up that tells you to sign up for facebook every time you visit a facebook page. I don't want a fucking facebook.",
+  "manifest_version": 2,
+  "version": "0.0.1",
+	"content_scripts": [
+		{
+			"matches": ["*://*.facebook.com/*"],
+			"js": ["remove.js"]
+		}
+  ]
+}
