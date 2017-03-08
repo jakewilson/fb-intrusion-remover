@@ -1,21 +1,14 @@
-function removeIntrusion() {
-	document.getElementById('expanding_cta_close_button').click();
-	try {
-		document.getElementById('u_0_6b').remove();
-	} catch(e) {
-		try {
-			document.getElementById('u_0_b').remove()
-		} catch(f) {
-			console.log('failed to remove it');
-		}
-	}
-}
-
-(function waitForLoad() {
-	let el = document.getElementById('u_0_a');
- 	if (el.offsetParent !== null) {
-		removeIntrusion();
-	} else  {
-		setTimeout(waitForLoad, 15);
-	}
+(function removeIntrusion() {
+    /**
+        This is the very specific and well-named class name
+        for the intrusive modal on every facebook page.
+        There is only one element with this class name that
+        I've ever encountered, but just to be safe, we'll
+        loop through the array and remove every element with
+        this class name.
+    */
+    let intrusions = document.getElementsByClassName('_5hn6');
+    for (let i = 0; i < intrusions.length; i++) {
+        intrusions.item(i).remove();
+    }
 })();
